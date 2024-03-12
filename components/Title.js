@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
 const Title = () => {
   const globalStyles = useGlobalStyles();
   if (!globalStyles) {
-    return <ActivityIndicator />; // Or some other placeholder
+    return <ActivityIndicator />;
   }
   return (
     <View style={[styles.title]}>
