@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Intentionality",
-    "slug": "Intentionality",
+    "slug": "intentionality",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./images/icon.png",
@@ -11,7 +11,9 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -24,6 +26,14 @@
     "web": {
       "favicon": "./images/favicon.png"
     },
-    "plugins": ["expo-font"]
+    "plugins": [
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "6f70d3a2-07f3-4a23-8265-41d7813eae4b"
+      }
+    },
+    "owner": "shubhammasang"
   }
 }

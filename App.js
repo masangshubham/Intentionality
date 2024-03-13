@@ -1,34 +1,28 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import { useGlobalStyles } from "./globalStyles";
-import Title from "./components/Title";
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import SplashScreen from "./components/SplashScreen";
+import Home from "./components/Home";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+const Stack = createStackNavigator();
 
-export default function App() {
-  const globalStyles = useGlobalStyles();
-
-  if (!globalStyles) {
-    return <ActivityIndicator />; // Or some other placeholder
-  }
-
+const App = () => {
   return (
-    <SafeAreaProvider>
-      <Title />
-      <View style={styles.container}>
-        <Text style={[globalStyles.bold, { fontSize: 30 }]}>
-          Intentionality
-        </Text>
-        <StatusBar style="auto" />
-      </View>
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Splash">
+        <Stack.Screen
+          name="Splash"
+          component={SplashScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
+
+export default App;

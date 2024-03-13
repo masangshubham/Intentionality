@@ -10,24 +10,25 @@ import { useGlobalStyles } from "../globalStyles";
 
 const styles = StyleSheet.create({
   title: {
-    marginTop: StatusBar.currentHeight + 8,
+    marginTop: 5,
     alignItems: "center",
     borderBottomWidth: 2,
     borderBottomColor: "#808080",
     paddingBottom: 8,
+    width: "100%",
   },
 });
 
-const Title = () => {
+const Header = () => {
   const globalStyles = useGlobalStyles();
   if (!globalStyles) {
     return <ActivityIndicator />;
   }
   return (
     <View style={[styles.title]}>
-      <Text style={[globalStyles.thin, { fontSize: 25 }]}>Intentionality</Text>
+      <Text style={[globalStyles.light, { fontSize: 25 }]}>Intentionality</Text>
     </View>
   );
 };
 
-export default Title;
+export default Header;

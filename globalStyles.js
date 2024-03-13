@@ -4,6 +4,8 @@ import {
   Roboto_400Regular,
   Roboto_500Medium,
   Roboto_700Bold,
+  Roboto_400Regular_Italic,
+  Roboto_300Light_Italic,
   useFonts,
 } from '@expo-google-fonts/roboto';
 
@@ -13,6 +15,8 @@ export const useGlobalStyles = () => {
     Roboto_400Regular,
     Roboto_500Medium,
     Roboto_700Bold,
+    Roboto_400Regular_Italic,
+    Roboto_300Light_Italic,
   });
 
   if (!fontsLoaded) {
@@ -31,6 +35,12 @@ export const useGlobalStyles = () => {
     },
     bold: {
       fontFamily: 'Roboto_700Bold',
+    },
+    regularItalic: {
+      fontFamily: 'Roboto_400Regular_Italic',
+    },
+    lightItalic: {
+      fontFamily: 'Roboto_300Light_Italic',
     },
   });
 
