@@ -14,7 +14,7 @@ import { useForm, Controller } from "react-hook-form";
 import * as Notifications from "expo-notifications";
 import { useEffect } from "react";
 import Constants from "expo-constants";
-
+import { schedulePushNotification } from "../notification";
 
 const styles = StyleSheet.create({
   title: {
@@ -74,10 +74,19 @@ const Main = () => {
   });
   const [selectedTime, setSelectedTime] = useState(null);
 
-
   const onSubmit = async (data) => {
-
     console.log(data);
+    schedulePushNotification(
+      `You have set an intention`,
+      `Intention: ${data.intention}, Estimated time: ${data.estimatedTime} mins`
+    );
+
+    setTimeout(async () => {
+      schedulePushNotification(
+        `Reminder of your intention`,
+        `Your intention was: ${data.intention}`
+      );
+    }, data.estimatedTime * 60 * 1000);
   };
 
   const handleButtonPress = (time) => {
