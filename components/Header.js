@@ -10,7 +10,7 @@ import { useGlobalStyles } from "../globalStyles";
 
 const styles = StyleSheet.create({
   title: {
-    marginTop: 5,
+    marginTop: 8,
     alignItems: "center",
     borderBottomWidth: 2,
     borderBottomColor: "#808080",
@@ -26,7 +26,7 @@ const Header = () => {
   }
   return (
     <View style={[styles.title]}>
-      <Text style={[globalStyles.light, { fontSize: 25 }]}>Intentionality</Text>
+      <Text style={[globalStyles.medium, { fontSize: 25 }]}>Intentionality</Text>
     </View>
   );
 };

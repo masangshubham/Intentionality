@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontSize: 20,
     padding: 10,
+    fontStyle: "italic",
     borderBottomWidth: 1,
     borderBottomColor: "#808080",
   },
@@ -82,10 +83,12 @@ const Main = () => {
     );
 
     setTimeout(async () => {
-      schedulePushNotification(
-        `Reminder of your intention`,
-        `Your intention was: ${data.intention}`
-      );
+      setInterval(() => {
+        schedulePushNotification(
+          `Reminder of your intention`,
+          `Your intention was: ${data.intention}`
+        );
+      }, 2 * 60 * 1000);
     }, data.estimatedTime * 60 * 1000);
   };
 
